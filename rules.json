@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "has language?",
+    "body": "if (data.hasOwnProperty('language')) {return true} else {return false}",
+    "true_id": 2,
+    "false_id": 3
+  },
+  {
+    "id": 2,
+    "name": "speaks german?",
+    "body": "if (data.language === 'de') {return true} else {return false}",
+    "true_id": 4,
+    "false_id": 5
+  },
+  {
+    "id": 3,
+    "name": "not acceptable user",
+    "body": "return true",
+    "true_id": null,
+    "false_id": null
+  },
+  {
+    "id": 4,
+    "name": "acceptable user",
+    "body": "return true",
+    "true_id": null,
+    "false_id": null
+  },
+  {
+    "id": 5,
+    "name": "speaks english?",
+    "body": "if (data.language === 'en') {return true} else {return false}",
+    "true_id": 4,
+    "false_id": 3
+  }
+]
