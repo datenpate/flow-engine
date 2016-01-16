@@ -5,3 +5,9 @@ A simple flow engine to validate a set of given rules against incoming data.
 npm install
 node build
 ```
+
+### Development
+```
+npm install
+npm run watch
+```

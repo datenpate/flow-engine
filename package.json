@@ -2,9 +2,11 @@
   "name": "flow-engine",
   "version": "1.0.0",
   "description": "simple flow engine to validate a set of given rules against incoming data",
+  "repository": "https://github.com/datenpate/flow-engine",
   "main": "index.js",
   "scripts": {
-    "postinstall": "babel src --out-dir build"
+    "postinstall": "babel src --out-dir build --source-maps",
+    "watch": "babel src --out-dir build --source-maps --watch"
   },
   "author": "Christian Jellinghaus <chscde@gmail.com>",
   "license": "ISC",
