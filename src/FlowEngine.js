@@ -34,10 +34,25 @@ module.exports = class FlowEngine {
 
   process(dataJSON) {
     let data = this.parseJSON(dataJSON)
+    let executedRules = []
     let next = (rule) => {
+      if (executedRules.includes(rule.id)) {
+        return Logger.error('Circular rule execution detected')
+      }
+      executedRules.push(rule.id)
+
       let result = rule.execute(data)
-      result.pass ? Logger.pass(result.message) : Logger.fail(result.message)
-      result.next === null ? Logger.info('End') : next(this.rules.getRuleById(result.next))
+      if (result.pass) {
+        Logger.pass(result.message)
+      } else {
+        Logger.fail(result.message)
+      }
+
+      if (result.next === null) {
+        return Logger.info('End')
+      }
+
+      next(this.rules.getRuleById(result.next))
     }
     next(this.rules.getFirstRule())
   }
