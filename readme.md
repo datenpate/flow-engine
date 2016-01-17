@@ -11,3 +11,9 @@ node build
 npm install
 npm run watch
 ```
+
+### Tests
+Tests are not complete. Missing tests for flow execution process and logger.
+```
+npm test
+```
