@@ -2,7 +2,7 @@
 var Logger = require('./Logger')
 
 module.exports = class Rule {
-  constructor(id, name, rule, true_id, false_id) {
+  constructor(id, name, rule, true_id = null, false_id = null) {
     this.id = id
     this.name = name
     this.rule = rule
